@@ -24,7 +24,7 @@ object Array_lianxi {
     // 访问元素也是使用多级圆括号
     //val element = myMatrix(0)(1) // 获取第一行第二列的元素（值为2）
     println(myMatrix(0)(0)+"\n####")
-    println(myMatrix(0)(1)+"\n####")
+    println(myMatrix(0)(1)+"\n#####")
     //可以使用多级圆括号来访问多维数组的元素 例如myMatrix(0)(1)来返回第一行第二列的元素
 
     // 创建一个3维的整型数组，第一维有1个元素，第二维有2个元素，第三维有3个元素

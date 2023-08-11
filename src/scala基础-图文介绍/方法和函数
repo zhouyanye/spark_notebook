@@ -1,0 +1,67 @@
+scala中 和java一样用用方法和函数  scala的方法是类的一部分 而函数是一个对象可以赋值给一个变量
+在类中定义的函数即是方法
+#方法的定义格式
+
+方法可以有参数和返回值，可以使用各种类型的访问修饰符（如public, private等），也可以使用其他修饰符（abstract, final, static等）。
+方法必须定义在类或特质（trait）中，通过类的实例（对象）来调用。
+#
+ def 方法名 ([参数列表]) : [返回类型] = {
+   function body //方法体
+   return [expr]//表达式 用于返回值
+ }
+#函数的定义方式
+
+函数是一种特殊的值，它可以赋值给变量、作为参数传递给其他函数或方法，也可以作为返回值。Scala中的函数是一等公民，也就是说函数本身就是一种数据类型。
+函数定义使用 val 关键字，后面跟着函数的名称、参数列表、返回类型和函数体。函数体使用 => 符号连接参数列表和函数体。
+函数定义可以省略参数类型，Scala会根据上下文自动推断参数类型。
+#
+val function([参数列表]):[return type]={
+    function body
+    return [expr]
+    }
+####
+ 方法
+ 没有使用实例的对象调用格式
+  functionName (参数列表)
+  方法由实例 的对象来第哦啊有可以用类似java的格式 可以使用类似java的格式(使用"."号)
+  [instance.]functionName(参数列表)
+
+  函数
+  函数定义使用 val 关键字，后面跟着函数的名称、参数列表、返回类型和函数体。函数体使用 => 符号连接参数列表和函数体。
+    val   functionName =([参数列表]) => function body
+    val addInt=(a:Int,b:Int)=> a+b
+
+   方法转换成函数
+   val f1= m _
+####
+方法调用：
+方法调用通常使用对象的实例（或类名，如果方法是静态的）来调用，使用的调用格式是类似Java的方式，即通过.号来调用方法。
+示例：
+
+class MyClass {
+  def add(x: Int, y: Int): Int = x + y
+}
+
+val obj = new MyClass()
+val result1 = obj.add(2, 3) // 使用对象实例来调用方法
+val result2 = MyClass.add(2, 3) // 如果方法是静态的，可以使用类名调用
+
+函数定义：
+函数定义使用 val 关键字，后面跟着函数的名称、参数列表、返回类型和函数体。函数是一种值，因此不需要对象实例来调用函数，直接通过函数名称来使用。
+示例：
+
+val addFunc: (Int, Int) => Int = (x, y) => x + y // 定义一个函数，接受两个Int类型参数，返回一个Int类型结果
+val result = addFunc(2, 3) // 调用函数，将结果赋给result
+
+方法转换成函数：
+在Scala中，可以将方法转换为函数。这是因为Scala中的函数是一等公民，允许直接将方法转换为具有相同参数和返回值的函数。方法转换成函数的方式是在方法名称后面加上下划线_。
+示例：
+
+class MyClass {
+  def add(x: Int, y: Int): Int = x + y
+}
+
+val obj = new MyClass()
+val addFunc = obj.add _ // 将add方法转换为函数
+val result = addFunc(2, 3) // 调用转换后的函数
+在这个例子中，我们定义了一个名为add的方法，并通过实例obj将其转换为函数addFunc。转换方法时，我们在方法名称后面加上下划线_。然后，我们可以像调用函数一样调用addFunc。
